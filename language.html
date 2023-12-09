@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Selection</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background:url('https://circletranslations.com/wp-content/uploads/2023/05/Languages.png');
+      color: #2d3436; /* Dark gray text color */
+    }
+
+    h1 {
+      color: #3498db;
+      margin-bottom: 20px;
+      
+    }
+
+    #languageSelect {
+      width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+    }
+
+    #selectedLanguage {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #3498db;
+    }
+    div
+    {
+      padding: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Language Selection</h1>
+
+    <label for="languageSelect">Select your language:</label>
+    <select id="languageSelect" onchange="updateSelectedLanguage()">
+      <option value="english">English</option>
+      <option value="spanish">Spanish</option>
+      <option value="french">French</option>
+      <!-- Add more language options as needed -->
+    </select>
+  </div>
+  
+
+  <div id="selectedLanguage"></div>
+
+  <script>
+    function updateSelectedLanguage() {
+      var selectedLanguage = document.getElementById('languageSelect').value;
+      document.getElementById('selectedLanguage').innerText = 'Selected Language: ' + selectedLanguage;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: url('https://static.global-learning-development.com/wp-content/uploads/2021/06/11105557/GettyImages-1206796363-scaled.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      background-color: rgba(62, 61, 65, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #343a40;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #495057;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    .button {
+      background-color: #4CAF50; /* Green */
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    .toggle-btn {
+      background-color: #007bff; /* Blue */
+      color: #fff;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      color: #6c757d;
+    }
+    label
+    {
+
+      font-weight: bold;
+    }
+    p{
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="background-color:transparent;">
+    <h2 style="color:white;">Login & Signup</h2>
+    <div id="loginForm">
+      <form action="/b.html" >
+        <label for="loginUsername" style="color:black;">Username:</label>
+        <input type="text" id="loginUsername" name="loginUsername"  required >
+
+        <label for="loginPassword" style="color:black ;">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword"   required >
+        
+        <button class="button" id="login">Login</button>
+        <a href="/b.html"></a>
+      </form>
+      <p style="color:black;">Don't have an account? <button class="toggle-btn" onclick="toggleForm('signupForm')">Sign up</button></p>
+    </div>
+
+    <div id="signupForm" style="display: none;">
+      <form action="/b.html">
+        <label for="signupUsername"style="color:black" >Create Username:</label>
+        <input type="text" id="signupUsername" name="signupUsername" required >
+
+        <label for="signupPassword"style="color:black">Create Password:</label>
+        <input type="password" id="signupPassword" name="signupPassword" required >
+
+        
+        <button class="button" id="signup">SignUp</button>
+      </form>
+      <p style="color: black;">Already have an account? <button class="toggle-btn" onclick="toggleForm('loginForm')">Login</button></p>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      // Add your login authentication logic here
+      alert("login succesfully.");
+    }
+
+    function signup() {
+      // Add your signup logic here
+      alert("not have an account.");
+    }
+
+    
+
+
+
+    document.getElementById("login").addEventListener("click", function () {
+        alert("Login succesfull");
+        setTimeout(() => { console.log("World");}, 2000);
+
+        window.location.href="http://127.0.0.1:5500/b.html";
+
+
+    })
+
+
+
+    function toggleForm(formId) {
+
+      document.getElementById('loginForm').style.display = formId === 'loginForm' ? 'block' : 'none';
+      document.getElementById('signupForm').style.display = formId === 'signupForm' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

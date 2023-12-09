@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background:url('https://media.istockphoto.com/id/1356947796/vector/people-give-review-rating-and-feedback-hands-different-skin-colors-vote-likes-hearts-thumbs.jpg?s=612x612&w=0&k=20&c=1I52EvWwcOg3lNLqj8NFEFC1i-avT6f3Fs7iXNMlVC4=');
+      
+      color: #2d3436; /* Dark gray text color */
+    }
+
+    h1 {
+      color: #3498db;
+      margin-bottom: 20px;
+    }
+
+    form {
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      background-color: #f4f4f4;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #3498db;
+      display: block;
+    }
+
+    textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border: 2px solid #57606f;
+      border-radius: 5px;
+      background-color: #57606f;
+      color: #dfe6e9;
+    }
+
+    input[type="submit"] {
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      border: 2px solid #6ab04c;
+      border-radius: 5px;
+      background-color: #6ab04c;
+      color: #dfe6e9;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #4b8737;
+    }
+
+    #thankYouMessage {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #3498db;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: fadeInOut 3s forwards; /* Adjust the duration as needed */
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; }
+      25%, 75% { opacity: 1; }
+    }
+    h1{
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1 >Feedback Form</h1>
+  </div>
+  
+
+  <form id="feedbackForm">
+    <label for="feedbackText">Your Feedback:</label>
+    <textarea id="feedbackText" name="feedbackText" rows="5" required></textarea>
+    <br>
+    <input type="submit" value="Submit Feedback">
+    
+  </form>
+
+  <div id="thankYouMessage">
+    <p>Thank you for your feedback!</p>
+  </div>
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      submitFeedback();
+    });
+
+    function submitFeedback() {
+      document.getElementById('feedbackForm').style.display = 'none';
+      document.getElementById('thankYouMessage').style.display = 'block';
+
+      // Close the popup after 3 seconds (adjust as needed)
+      setTimeout(function () {
+        document.getElementById('thankYouMessage').style.display = 'none';
+        document.getElementById('feedbackForm').style.display = 'block';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
